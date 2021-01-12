@@ -10,7 +10,7 @@ on:
 
 jobs:
   analyze:
-    name: analyza
+    name: analyze
     runs-on: ubuntu-latest
 
     strategy:

@@ -24,6 +24,9 @@ class Person extends Entity {
 
   @Property
   is_admin!: NullableBoolean;
+
+  @Property
+  non_nullable_property!: string;
 }
 
 const person = new Person() as RemapProperties<Person>;
@@ -51,8 +54,17 @@ describe("Check types", () => {
 
   test("Correctly get the types of all properties", () => {
     const keys = getAllPropertyKeys(person);
-    const [name, age, birthday, is_admin] = keys.map((key) => getTypeOfProperty(person, key));
+    const [name, age, birthday, is_admin] = keys.map((key) => getTypeOfProperty(person, key)).map((t) => t.type);
     expect([name, age, birthday, is_admin]).toEqual(["string", "number", "date", "boolean"]);
+  });
+
+  test("Properties that aren't NullableX should still have correct types", () => {
+    const type = getTypeOfProperty(person, "non_nullable_property");
+
+    expect(type).toEqual({
+      type: "string",
+      nullable: false,
+    });
   });
 });
 
