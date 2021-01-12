@@ -1,5 +1,4 @@
 import {
-  Entity,
   NullableDate,
   NullableNumber,
   NullableString,
@@ -12,7 +11,7 @@ import {
   getTypeOfProperty,
 } from "../src";
 
-class Person extends Entity {
+class Person {
   @Property
   name!: NullableString;
 

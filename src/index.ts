@@ -1,6 +1,6 @@
 import "reflect-metadata";
 
-import { availableTypes, Entity, NullableBoolean, NullableDate, NullableNumber, NullableString } from "./structs";
+import { availableTypes, NullableBoolean, NullableDate, NullableNumber, NullableString } from "./structs";
 
 export const reflectionKeys = { classKeys: "ts:nullables:keys" };
 
@@ -19,11 +19,11 @@ export function getAllPropertyKeys<T extends Object>(target: T): (keyof T)[] {
   return Reflect.getMetadata(reflectionKeys.classKeys, target) || [];
 }
 
-export function getDesignOfProperty<T extends Entity, K extends keyof T>(target: T, property: K) {
+export function getDesignOfProperty<T extends Object, K extends keyof T>(target: T, property: K) {
   return Reflect.getMetadata("design:type", target, property as string);
 }
 
-export function getTypeOfProperty<T extends Entity, K extends keyof T>(
+export function getTypeOfProperty<T extends Object, K extends keyof T>(
   target: T,
   property: K
 ): { type: typeof availableTypes[number]; nullable: true } | { type: string; nullable: false } {
@@ -77,7 +77,7 @@ export type ParsePotentiallyNullableType<T> = T extends NullableBoolean
   ? Date | null
   : T;
 
-export type RemapProperties<T extends Entity> = {
+export type RemapProperties<T extends Object> = {
   [Key in keyof T]: ParsePotentiallyNullableType<T[Key]>;
 };
 

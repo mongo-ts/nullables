@@ -11,5 +11,3 @@ export const Types = {
 } as const;
 
 export const availableTypes = ["date", "string", "number", "boolean"] as const;
-
-export class Entity {}

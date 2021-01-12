@@ -1,7 +1,7 @@
 {
-  "name": "ts-npm-template",
-  "version": "1.0.0",
-  "repository": "https://github.com/alii/ts-npm-template",
+  "name": "nullables",
+  "version": "1.0.1",
+  "repository": "https://github.com/mongo-ts/nullables",
   "author": "Alistair Smith <alistairsmith01@gmail.com>",
   "license": "MIT",
   "scripts": {
