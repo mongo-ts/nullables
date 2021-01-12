@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "ES6",
+    "target": "ES2017",
     "sourceMap": false,
     "esModuleInterop": true,
     "declaration": true,
     "rootDir": "src",
     "outDir": "dist",
     "strict": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "exclude": ["node_modules", "dist", "__tests__"]
 }
