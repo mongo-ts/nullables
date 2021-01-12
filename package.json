@@ -1,6 +1,6 @@
 {
   "name": "nullables",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/mongo-ts/nullables",
   "author": "Alistair Smith <alistairsmith01@gmail.com>",
   "license": "MIT",

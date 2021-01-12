@@ -1,7 +1,22 @@
-export class NullableDate extends Date {}
-export class NullableString extends String {}
-export class NullableNumber extends Number {}
-export class NullableBoolean extends Boolean {}
+export interface INullable {
+  _no: string;
+}
+
+export class NullableDate extends Date implements INullable {
+  _no = "date";
+}
+
+export class NullableString extends String implements INullable {
+  _no = "string";
+}
+
+export class NullableNumber extends Number implements INullable {
+  _no = "number";
+}
+
+export class NullableBoolean extends Boolean implements INullable {
+  _no = "boolean";
+}
 
 export const Types = {
   NullableDate,

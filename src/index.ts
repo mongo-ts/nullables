@@ -75,7 +75,7 @@ export type ParsePotentiallyNullableType<T> = T extends NullableBoolean
   ? string | null
   : T extends NullableDate
   ? Date | null
-  : T;
+  : NonNullable<T>;
 
 export type RemapProperties<T extends Object> = {
   [Key in keyof T]: ParsePotentiallyNullableType<T[Key]>;

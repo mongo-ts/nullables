@@ -31,7 +31,7 @@ class Person {
   array!: string[];
 }
 
-const person = new Person() as RemapProperties<Person>;
+const person = (new Person() as unknown) as RemapProperties<Person>;
 
 describe("Check types", () => {
   test("Correctly generate a class with a nullable string", () => {
